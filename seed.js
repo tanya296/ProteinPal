@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-import Food from "./models/foodModel.js";             
-
+import Food from "./models/foodModel.js";
 
 dotenv.config();
 
@@ -17,7 +16,7 @@ export const foods = [
     fat: 10,
     fiber: 0,
     servingSize: "2 eggs (100g)",
-    image: "https://i.imgur.com/3C4zC4y.jpg",
+    image: "https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?w=400&h=300&fit=crop",
   },
   {
     name: "Paneer (100g)",
@@ -30,7 +29,7 @@ export const foods = [
     fat: 21,
     fiber: 0,
     servingSize: "100g",
-    image: "https://i.imgur.com/EWwTgvl.jpg",
+    image: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=400&h=300&fit=crop",
   },
   {
     name: "Grilled Chicken Breast (100g)",
@@ -43,7 +42,7 @@ export const foods = [
     fat: 3.5,
     fiber: 0,
     servingSize: "100g",
-    image: "https://i.imgur.com/WmKkLMh.jpg",
+    image: "https://images.unsplash.com/photo-1604503468506-a8da13d82791?w=400&h=300&fit=crop",
   },
   {
     name: "Greek Yogurt (200g)",
@@ -56,7 +55,7 @@ export const foods = [
     fat: 3,
     fiber: 0,
     servingSize: "200g cup",
-    image: "https://i.imgur.com/0ZlR3f3.jpg",
+    image: "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400&h=300&fit=crop",
   },
   {
     name: "Protein Bar (Chocolate)",
@@ -69,7 +68,7 @@ export const foods = [
     fat: 8,
     fiber: 5,
     servingSize: "60g bar",
-    image: "https://i.imgur.com/MqA6Juq.jpg",
+    image: "https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=400&h=300&fit=crop",
   },
   {
     name: "Whey Protein (1 scoop)",
@@ -82,7 +81,7 @@ export const foods = [
     fat: 1,
     fiber: 0,
     servingSize: "30g scoop",
-    image: "https://i.imgur.com/Hh8s8Rn.jpg",
+    image: "https://images.unsplash.com/photo-1593095948071-474c5cc2989d?w=400&h=300&fit=crop",
   },
   {
     name: "Tofu (100g)",
@@ -95,7 +94,7 @@ export const foods = [
     fat: 5,
     fiber: 1,
     servingSize: "100g",
-    image: "https://i.imgur.com/BJzTdGK.jpg",
+    image: "https://images.unsplash.com/photo-1600335895229-6e75511892c8?w=400&h=300&fit=crop",
   },
   {
     name: "Lentils (Cooked 1 cup)",
@@ -108,7 +107,7 @@ export const foods = [
     fat: 1,
     fiber: 15,
     servingSize: "200g (1 cup)",
-    image: "https://i.imgur.com/FV5eHFG.jpg",
+    image: "https://images.unsplash.com/photo-1596797038530-2c107229654b?w=400&h=300&fit=crop",
   },
   {
     name: "Peanut Butter (2 tbsp)",
@@ -121,7 +120,7 @@ export const foods = [
     fat: 16,
     fiber: 2,
     servingSize: "32g (2 tbsp)",
-    image: "https://i.imgur.com/7QwJ7jP.jpg",
+    image: "https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=400&h=300&fit=crop",
   },
   {
     name: "Sprouts (100g)",
@@ -134,7 +133,7 @@ export const foods = [
     fat: 1,
     fiber: 2,
     servingSize: "100g",
-    image: "https://i.imgur.com/TsX5QvO.jpg",
+    image: "https://images.unsplash.com/photo-1591814468924-caf88d1232e1?w=400&h=300&fit=crop",
   },
   {
     name: "Fish (100g)",
@@ -147,7 +146,7 @@ export const foods = [
     fat: 10,
     fiber: 0,
     servingSize: "100g",
-    image: "https://i.imgur.com/bbnoo6J.jpg",
+    image: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=400&h=300&fit=crop",
   },
   {
     name: "Protein Shake (Chocolate)",
@@ -160,7 +159,7 @@ export const foods = [
     fat: 3,
     fiber: 1,
     servingSize: "330ml bottle",
-    image: "https://i.imgur.com/qZIvx6U.jpg",
+    image: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=400&h=300&fit=crop",
   },
   {
     name: "Soya Chunks (100g)",
@@ -173,7 +172,7 @@ export const foods = [
     fat: 0.5,
     fiber: 13,
     servingSize: "100g dry",
-    image: "https://i.imgur.com/vCjj3yo.jpg",
+    image: "https://images.unsplash.com/photo-1585032226651-759b368d7246?w=400&h=300&fit=crop",
   },
   {
     name: "Oats (100g)",
@@ -186,7 +185,7 @@ export const foods = [
     fat: 7,
     fiber: 10,
     servingSize: "100g",
-    image: "https://i.imgur.com/Qs1kxQp.jpg",
+    image: "https://images.unsplash.com/photo-1517673132405-a56a62b18caf?w=400&h=300&fit=crop",
   },
   {
     name: "Milk (200ml)",
@@ -199,7 +198,7 @@ export const foods = [
     fat: 7,
     fiber: 0,
     servingSize: "200ml",
-    image: "https://i.imgur.com/hzFJrKf.jpg",
+    image: "https://images.unsplash.com/photo-1563636619-e9143da7973b?w=400&h=300&fit=crop",
   },
   {
     name: "Protein Cookies",
@@ -212,7 +211,7 @@ export const foods = [
     fat: 9,
     fiber: 3,
     servingSize: "50g pack",
-    image: "https://i.imgur.com/LGmAdpv.jpg",
+    image: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=400&h=300&fit=crop",
   },
   {
     name: "Protein Shake (Strawberry)",
@@ -225,7 +224,7 @@ export const foods = [
     fat: 2,
     fiber: 0,
     servingSize: "330ml bottle",
-    image: "https://i.imgur.com/AGfrupA.jpg",
+    image: "https://images.unsplash.com/photo-1505252585461-04db1eb84625?w=400&h=300&fit=crop",
   },
   {
     name: "Cottage Cheese Sandwich",
@@ -238,7 +237,7 @@ export const foods = [
     fat: 10,
     fiber: 4,
     servingSize: "1 sandwich (200g)",
-    image: "https://i.imgur.com/qBtVXZh.jpg",
+    image: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=400&h=300&fit=crop",
   },
   {
     name: "Mixed Nuts (50g)",
@@ -251,7 +250,7 @@ export const foods = [
     fat: 24,
     fiber: 3,
     servingSize: "50g",
-    image: "https://i.imgur.com/ay8C6pB.jpg",
+    image: "https://images.unsplash.com/photo-1508747703725-719777637510?w=400&h=300&fit=crop",
   },
   {
     name: "Egg White Omelette",
@@ -264,7 +263,7 @@ export const foods = [
     fat: 4,
     fiber: 0,
     servingSize: "2 egg whites (120g)",
-    image: "https://i.imgur.com/dmgoUUt.jpg",
+    image: "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=400&h=300&fit=crop",
   },
 ];
 
