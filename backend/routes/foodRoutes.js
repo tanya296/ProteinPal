@@ -1,4 +1,6 @@
 import express from "express";
+import fs from "fs";
+import path from "path";
 import Food from "../models/foodModel.js";
 
 const router = express.Router();
@@ -18,7 +20,31 @@ router.get("/", async (req, res) => {
   try {
     const foods = await Food.find().lean();
     const sortedFoods = sortByProteinEfficiency(foods);
-    res.json(sortedFoods);
+    // Map images to absolute URLs
+    const host = `${req.protocol}://${req.get("host")}`;
+    const imagesDir = path.join(process.cwd(), "backend", "images");
+
+    const normalizeImage = (img) => {
+      if (!img || typeof img !== "string") return null;
+      if (img.startsWith("http")) return img;
+      // get filename part
+      let filename = img.split("/").pop();
+      // if filename has no extension, try common ones
+      if (!path.extname(filename)) {
+        const exts = [".png", ".jpg", ".jpeg"];
+        for (const ext of exts) {
+          const candidate = path.join(imagesDir, filename + ext);
+          if (fs.existsSync(candidate)) {
+            filename = filename + ext;
+            break;
+          }
+        }
+      }
+      return `${host}/images/${filename}`;
+    };
+
+    const mapped = sortedFoods.map((f) => ({ ...f, image: normalizeImage(f.image) }));
+    res.json(mapped);
   } catch (err) {
     res.status(500).json({ message: "Server Error", error: err.message });
   }
@@ -30,7 +56,26 @@ router.get("/budget/:amount", async (req, res) => {
     const budget = Number(req.params.amount);
     const foods = await Food.find({ price: { $lte: budget } }).lean();
     const sortedFoods = sortByProteinEfficiency(foods);
-    res.json(sortedFoods);
+    const host = `${req.protocol}://${req.get("host")}`;
+    const imagesDir = path.join(process.cwd(), "backend", "images");
+    const normalizeImage = (img) => {
+      if (!img || typeof img !== "string") return null;
+      if (img.startsWith("http")) return img;
+      let filename = img.split("/").pop();
+      if (!path.extname(filename)) {
+        const exts = [".png", ".jpg", ".jpeg"];
+        for (const ext of exts) {
+          const candidate = path.join(imagesDir, filename + ext);
+          if (fs.existsSync(candidate)) {
+            filename = filename + ext;
+            break;
+          }
+        }
+      }
+      return `${host}/images/${filename}`;
+    };
+    const mapped = sortedFoods.map((f) => ({ ...f, image: normalizeImage(f.image) }));
+    res.json(mapped);
   } catch (err) {
     res.status(500).json({ message: "Server Error", error: err.message });
   }
@@ -42,7 +87,26 @@ router.get("/category/:category", async (req, res) => {
     const category = req.params.category;
     const foods = await Food.find({ category }).lean();
     const sortedFoods = sortByProteinEfficiency(foods);
-    res.json(sortedFoods);
+    const host = `${req.protocol}://${req.get("host")}`;
+    const imagesDir = path.join(process.cwd(), "backend", "images");
+    const normalizeImage = (img) => {
+      if (!img || typeof img !== "string") return null;
+      if (img.startsWith("http")) return img;
+      let filename = img.split("/").pop();
+      if (!path.extname(filename)) {
+        const exts = [".png", ".jpg", ".jpeg"];
+        for (const ext of exts) {
+          const candidate = path.join(imagesDir, filename + ext);
+          if (fs.existsSync(candidate)) {
+            filename = filename + ext;
+            break;
+          }
+        }
+      }
+      return `${host}/images/${filename}`;
+    };
+    const mapped = sortedFoods.map((f) => ({ ...f, image: normalizeImage(f.image) }));
+    res.json(mapped);
   } catch (err) {
     res.status(500).json({ message: "Server Error", error: err.message });
   }
@@ -66,7 +130,26 @@ router.get("/search/:query", async (req, res) => {
       name: { $regex: query, $options: "i" } 
     }).lean();
     const sortedFoods = sortByProteinEfficiency(foods);
-    res.json(sortedFoods);
+    const host = `${req.protocol}://${req.get("host")}`;
+    const imagesDir = path.join(process.cwd(), "backend", "images");
+    const normalizeImage = (img) => {
+      if (!img || typeof img !== "string") return null;
+      if (img.startsWith("http")) return img;
+      let filename = img.split("/").pop();
+      if (!path.extname(filename)) {
+        const exts = [".png", ".jpg", ".jpeg"];
+        for (const ext of exts) {
+          const candidate = path.join(imagesDir, filename + ext);
+          if (fs.existsSync(candidate)) {
+            filename = filename + ext;
+            break;
+          }
+        }
+      }
+      return `${host}/images/${filename}`;
+    };
+    const mapped = sortedFoods.map((f) => ({ ...f, image: normalizeImage(f.image) }));
+    res.json(mapped);
   } catch (err) {
     res.status(500).json({ message: "Server Error", error: err.message });
   }

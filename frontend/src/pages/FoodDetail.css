@@ -1,0 +1,273 @@
+.food-detail-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.back-button {
+  background: white;
+  border: 2px solid #5a9fb8;
+  color: #5a9fb8;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: all 0.3s;
+}
+
+.back-button:hover {
+  background: #5a9fb8;
+  color: white;
+}
+
+.detail-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 0;
+}
+
+.detail-image-section {
+  background: linear-gradient(135deg, #b8d8e3 0%, #a0c9d6 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.detail-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.detail-content {
+  padding: 40px;
+}
+
+.detail-header {
+  margin-bottom: 20px;
+}
+
+.detail-header h1 {
+  font-size: 2.5rem;
+  color: #2c5f6f;
+  margin-bottom: 10px;
+}
+
+.detail-category {
+  display: inline-block;
+  padding: 6px 16px;
+  background: linear-gradient(135deg, #7ab8cc 0%, #5a9fb8 100%);
+  color: white;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.detail-brand {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.detail-price-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.detail-price {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #4a8ba0;
+}
+
+.detail-serving {
+  font-size: 1.1rem;
+  color: #666;
+  background: #f8f9fa;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.detail-efficiency {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.efficiency-card {
+  background: linear-gradient(135deg, #7ab8cc 0%, #5a9fb8 100%);
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.efficiency-value {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.efficiency-label {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.nutrition-details {
+  margin-bottom: 30px;
+}
+
+.nutrition-details h2 {
+  font-size: 1.8rem;
+  color: #2c5f6f;
+  margin-bottom: 15px;
+}
+
+.nutrition-table {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.nutrition-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.nutrition-row:last-child {
+  border-bottom: none;
+}
+
+.nutrition-name {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.nutrition-value-detail {
+  font-size: 1.1rem;
+  color: #5a9fb8;
+  font-weight: bold;
+}
+
+.macros-breakdown {
+  margin-top: 30px;
+}
+
+.macros-breakdown h3 {
+  font-size: 1.5rem;
+  color: #2c5f6f;
+  margin-bottom: 20px;
+}
+
+.macro-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.macro-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.macro-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.bar {
+  height: 24px;
+  background: #e0e0e0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  transition: width 0.5s ease;
+  border-radius: 12px;
+}
+
+.protein-bar {
+  background: linear-gradient(90deg, #7ab8cc 0%, #5a9fb8 100%);
+}
+
+.carbs-bar {
+  background: linear-gradient(90deg, #a8d5ba 0%, #88c9a1 100%);
+}
+
+.fat-bar {
+  background: linear-gradient(90deg, #f5c26b 0%, #f0a84d 100%);
+}
+
+.detail-loading,
+.detail-error {
+  text-align: center;
+  padding: 100px 20px;
+  color: #2c5f6f;
+}
+
+.detail-loading .spinner {
+  border: 4px solid rgba(90, 159, 184, 0.3);
+  border-top: 4px solid #5a9fb8;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+.detail-error h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 968px) {
+  .detail-card {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-image-section {
+    padding: 30px;
+  }
+
+  .detail-content {
+    padding: 30px;
+  }
+
+  .detail-header h1 {
+    font-size: 2rem;
+  }
+
+  .detail-efficiency {
+    grid-template-columns: 1fr;
+  }
+}

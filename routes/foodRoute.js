@@ -72,6 +72,25 @@ router.get("/search/:query", async (req, res) => {
   }
 });
 
+// Get a single food by ID
+router.get("/:id", async (req, res) => {
+  try {
+    // Validate MongoDB ObjectId format
+    if (!req.params.id.match(/^[0-9a-fA-F]{24}$/)) {
+      return res.status(400).json({ message: "Invalid food ID format" });
+    }
+    
+    const food = await Food.findById(req.params.id).lean();
+    if (!food) {
+      return res.status(404).json({ message: "Food not found" });
+    }
+    res.json(food);
+  } catch (err) {
+    console.error("Error fetching food by ID:", err);
+    res.status(500).json({ message: "Server Error", error: err.message });
+  }
+});
+
 // Add a food
 router.post("/", async (req, res) => {
   try {

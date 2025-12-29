@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/foods";
+export const API_BASE = "http://localhost:5000";
+const API_URL = `${API_BASE}/api/foods`;
 
 export const getAllFoods = async () => {
   try {
@@ -59,5 +60,15 @@ export const addFood = async (foodData) => {
   } catch (err) {
     console.error("Error adding food:", err);
     throw err;
+  }
+};
+
+export const getFoodById = async (id) => {
+  try {
+    const res = await axios.get(`${API_URL}/${id}`);
+    return res.data;
+  } catch (err) {
+    console.error("Error fetching food by ID:", err);
+    return null;
   }
 };

@@ -1,0 +1,268 @@
+.tracker-container {
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 20px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+}
+
+.tracker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.tracker-header h2 {
+  font-size: 1.5rem;
+  color: #2c5f6f;
+  margin: 0;
+}
+
+.clear-btn {
+  background: #f0f0f0;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: #666;
+  font-weight: 600;
+}
+
+.clear-btn:hover {
+  background: #ffebee;
+  color: #d32f2f;
+}
+
+.tracker-empty {
+  text-align: center;
+  padding: 40px 20px;
+  color: #999;
+}
+
+.tracker-empty p {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.tracker-empty span {
+  font-size: 0.9rem;
+  color: #999;
+}
+
+.tracked-items {
+  margin-bottom: 20px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.tracked-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: all 0.3s;
+}
+
+.tracked-item:hover {
+  background: #e8f4f8;
+}
+
+.tracked-item-info {
+  flex: 1;
+}
+
+.tracked-item-name {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+.tracked-item-details {
+  font-size: 0.85rem;
+  color: #5a9fb8;
+  font-weight: 600;
+}
+
+.tracked-item-price {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 2px;
+}
+
+.remove-btn {
+  background: #ffebee;
+  border: none;
+  color: #d32f2f;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.remove-btn:hover {
+  background: #d32f2f;
+  color: white;
+  transform: scale(1.1);
+}
+
+.tracker-summary {
+  background: linear-gradient(135deg, #e8f4f8 0%, #d4e7ed 100%);
+  padding: 20px;
+  border-radius: 15px;
+  margin-top: 20px;
+}
+
+.tracker-summary h3 {
+  font-size: 1.2rem;
+  color: #2c5f6f;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.summary-item {
+  background: white;
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.summary-item.highlight {
+  background: linear-gradient(135deg, #7ab8cc 0%, #5a9fb8 100%);
+  color: white;
+  grid-column: span 2;
+}
+
+.summary-item.price-item {
+  background: linear-gradient(135deg, #a8d5ba 0%, #88c9a1 100%);
+  color: white;
+}
+
+.summary-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.summary-item.highlight .summary-value {
+  font-size: 2rem;
+}
+
+.summary-label {
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+.macro-percentages {
+  margin-top: 20px;
+}
+
+.macro-percentages h4 {
+  font-size: 1rem;
+  color: #2c5f6f;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.macro-split-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.split-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.split-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.split-bar-bg {
+  height: 18px;
+  background: white;
+  border-radius: 9px;
+  overflow: hidden;
+}
+
+.split-bar-fill {
+  height: 100%;
+  transition: width 0.5s ease;
+  border-radius: 9px;
+}
+
+.protein-fill {
+  background: linear-gradient(90deg, #7ab8cc 0%, #5a9fb8 100%);
+}
+
+.carbs-fill {
+  background: linear-gradient(90deg, #a8d5ba 0%, #88c9a1 100%);
+}
+
+.fat-fill {
+  background: linear-gradient(90deg, #f5c26b 0%, #f0a84d 100%);
+}
+
+/* Scrollbar styling */
+.tracked-items::-webkit-scrollbar,
+.tracker-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.tracked-items::-webkit-scrollbar-track,
+.tracker-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.tracked-items::-webkit-scrollbar-thumb,
+.tracker-container::-webkit-scrollbar-thumb {
+  background: #5a9fb8;
+  border-radius: 10px;
+}
+
+.tracked-items::-webkit-scrollbar-thumb:hover,
+.tracker-container::-webkit-scrollbar-thumb:hover {
+  background: #4a8ba0;
+}
+
+@media (max-width: 968px) {
+  .tracker-container {
+    position: relative;
+    top: 0;
+    max-height: none;
+    margin-bottom: 20px;
+  }
+}
